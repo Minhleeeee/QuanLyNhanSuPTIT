@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Quản Lý Nhân Sự TYP</title>
+    <style>
+        h1 
+        {
+            color: #F6DEC8;
+            font-size: 4rem;
+            margin: 10px;
+            font-family: "Baloo 2";
+        }
+        h2 
+        {
+            color: whitesmoke;
+            font-size: 2rem;
+            font-family: "Baloo 2";
+        }
+        h3 
+        {
+            color: rgb(162, 110, 210);
+            font-family: "Baloo 2";
+            line-height: 20px;
+        }
+        #title 
+        {
+            margin-top: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+            font-family: "Baloo 2";
+        }
+        .parentrole 
+        {
+            position: relative;
+            line-height: 10px;
+        }
+        #roleleft 
+        {
+            position: absolute;
+            left: 50px;
+            right: 800px;
+            text-align: center;
+            font-family: "Baloo 2";
+        }
+        #roleright 
+        {
+            position: absolute;
+            left: 800px;
+            right: 50px;
+            text-align: center;
+            font-family: "Baloo 2";
+        }
+        .page, .group, .media, .tik, .des, .dev 
+        {
+            border-radius: 30px;
+        }
+        .p1 
+        {
+            color: black;
+        }
+        .p2 
+        {
+            color: rgb(224, 20, 20);
+        }
+        .page 
+        {
+            border: solid #D37C70;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #D37C70;
+        }
+        .group 
+        {
+            border: solid #F1CA88;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #F1CA88;
+        }
+        .tik 
+        {
+            border: solid #A8B548;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #A8B548;
+        }
+        .media 
+        {
+            border: solid #8BABC6;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #8BABC6;
+        }
+        .des 
+        {
+            border: solid #B79A67;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #B79A67;
+        }
+        .dev 
+        {
+            border: solid #F6CDBF;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #F6CDBF;
+        }
+        .inf 
+        {
+            position: relative;
+            line-height: 10px;
+        }
+        .informationleft, .informationright 
+        {
+            color: navy;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            padding-left: 0;
+            padding-right: 0;
+            text-align: center;
+            line-height: 25px;
+            display: none;
+        }
+        html 
+        {
+            background-color: #FFF4EF;
+            background-repeat: no-repeat;
+        }
+        label
+        {
+            display: block;
+            margin-bottom: 10px;
+        }
+        button 
+        {
+            width: 100%;
+            border-radius: 30px;
+            background-color: inherit;
+            border: none;
+            padding: inherit;
+            cursor: pointer;
+        }
+        button:hover 
+        {
+            text-decoration: underline;
+            text-underline-offset: 8px;
+            text-decoration-color: aqua;
+        }
+        .sm
+        {
+            border-style: dotted;
+            background-color: rgb(181, 121, 238);
+            
+            border-radius: 0 0 0 0;
+        }
+    </style>
+    <script>
+        function showForm(formId) 
+        {
+            var formToToggle = document.getElementById(formId);
+            if (formToToggle.style.display === 'block') 
+            {
+                formToToggle.style.display = 'none';
+            } 
+            else 
+            {
+                var allForms = document.querySelectorAll('.informationleft, .informationright');
+                allForms.forEach(function(form) 
+                {
+                    form.style.display = 'none';
+                });
+                formToToggle.style.display = 'block';
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="title">
+        <h1 class="p1">Quản Lý Nhân Sự</h1>
+        <h1 class="p2">Tôi Yêu PTIT</h1>
+    </div>
+    
+    <div class="parentrole">
+        <div id="roleleft">
+            <div class="page">
+                <button onclick="showForm('infoPage')">
+                    <h2>Team Page</h2>
+                </button>
+            </div>
+            <div id="infoPage" class="informationleft">
+                <form>
+                    <label>Họ và tên</label>
+                    <input type="text" placeholder="Tên bạn là ?" /> 
+                    <label>Ngày tháng năm sinh</label>
+                    <input type="date" placeholder="Bạn sinh ngày ?" /> 
+                    <label>Quê quán</label>
+                    <input type="text" placeholder="Quê bạn ở ?" /> 
+                    <label>Khoá học</label>
+                    <input type="text" placeholder="Bạn là khoá bao nhiêu ?" />  
+                    <label>Ngành học hiện tại</label>
+                    <input type="text" placeholder="Bạn đang học ngành gì ?" />   
+                    <label>Email cá nhân</label>
+                    <input type="email" placeholder="Email của bạn là ?" />   
+                    <label>Link FB cá nhân</label>
+                    <input type="text" placeholder="Link FB cá nhân !" />   
+                    <label>Số điện thoại</label>
+                    <input type="text" placeholder="Vui lòng nhập số điện thoại của bạn" />   
+                </form>
+                <div class="sm"> <button> Gửi thông tin !</button> </div> 
+            </div>
+            <div class="group">
+                <button onclick="showForm('infoGroup')">
+                    <h2>Team Group</h2>
+                </button>
+            </div>
+            <div id="infoGroup" class="informationleft">
+                <form>
+                    <label>Họ và tên</label>
+                    <input type="text" placeholder="Tên bạn là ?" />   
+                    <label>Ngày tháng năm sinh</label>
+                    <input type="date" placeholder="Bạn sinh ngày ?" />   
+                    <label>Quê quán</label>
+                    <input type="text" placeholder="Quê bạn ở ?" />   
+                    <label>Khoá học</label>
+                    <input type="text" placeholder="Bạn là khoá bao nhiêu ?" />   
+                    <label>Ngành học hiện tại</label>
+                    <input type="text" placeholder="Bạn đang học ngành gì ?" />   
+                    <label>Email cá nhân</label>
+                    <input type="email" placeholder="Email của bạn là ?" />   
+                    <label>Link FB cá nhân</label>
+                    <input type="text" placeholder="Link FB cá nhân !" />   
+                    <label>Số điện thoại</label>
+                    <input type="text" placeholder="Vui lòng nhập số điện thoại của bạn" />   
+                </form>
+                <div class="sm"> <button> Gửi thông tin !</button> </div>
+            </div>
+            <div class="tik">
+                <button onclick="showForm('infoTikTok')">
+                    <h2>Team TikTok</h2>
+                </button>
+            </div>
+            <div id="infoTikTok" class="informationleft">
+                <form>
+                    <label>Họ và tên</label>
+                    <input type="text" placeholder="Tên bạn là ?" />   
+                    <label>Ngày tháng năm sinh</label>
+                    <input type="date" placeholder="Bạn sinh ngày ?" />   
+                    <label>Quê quán</label>
+                    <input type="text" placeholder="Quê bạn ở ?" />   
+                    <label>Khoá học</label>
+                    <input type="text" placeholder="Bạn là khoá bao nhiêu ?" />   
+                    <label>Ngành học hiện tại</label>
+                    <input type="text" placeholder="Bạn đang học ngành gì ?" />   
+                    <label>Email cá nhân</label>
+                    <input type="email" placeholder="Email của bạn là ?" />   
+                    <label>Link FB cá nhân</label>
+                    <input type="text" placeholder="Link FB cá nhân !" />   
+                    <label>Số điện thoại</label>
+                    <input type="text" placeholder="Vui lòng nhập số điện thoại của bạn" />   
+                </form>
+                <div class="sm"> <button> Gửi thông tin !</button> </div>
+            </div>
+        </div>
+        <div id="roleright">
+            <div class="media">
+                <button onclick="showForm('infoMedia')">
+                    <h2>Team Media</h2>
+                </button>
+            </div>
+            <div id="infoMedia" class="informationright">
+                <form>
+                    <label>Họ và tên</label>
+                    <input type="text" placeholder="Tên bạn là ?" />   
+                    <label>Ngày tháng năm sinh</label>
+                    <input type="date" placeholder="Bạn sinh ngày ?" />   
+                    <label>Quê quán</label>
+                    <input type="text" placeholder="Quê bạn ở ?" />   
+                    <label>Khoá học</label>
+                    <input type="text" placeholder="Bạn là khoá bao nhiêu ?" />   
+                    <label>Ngành học hiện tại</label>
+                    <input type="text" placeholder="Bạn đang học ngành gì ?" />   
+                    <label>Email cá nhân</label>
+                    <input type="email" placeholder="Email của bạn là ?" />   
+                    <label>Link FB cá nhân</label>
+                    <input type="text" placeholder="Link FB cá nhân !" />   
+                    <label>Số điện thoại</label>
+                    <input type="text" placeholder="Vui lòng nhập số điện thoại của bạn" />   
+                </form>
+                <div class="sm"> <button> Gửi thông tin !</button> </div>
+            </div>
+            <div class="des">
+                <button onclick="showForm('infoDesign')">
+                    <h2>Team Design</h2>
+                </button>
+            </div>
+            <div id="infoDesign" class="informationright">
+                <form>
+                    <label>Họ và tên</label>
+                    <input type="text" placeholder="Tên bạn là ?" />   
+                    <label>Ngày tháng năm sinh</label>
+                    <input type="date" placeholder="Bạn sinh ngày ?" />   
+                    <label>Quê quán</label>
+                    <input type="text" placeholder="Quê bạn ở ?" />   
+                    <label>Khoá học</label>
+                    <input type="text" placeholder="Bạn là khoá bao nhiêu ?" />   
+                    <label>Ngành học hiện tại</label>
+                    <input type="text" placeholder="Bạn đang học ngành gì ?" />   
+                    <label>Email cá nhân</label>
+                    <input type="email" placeholder="Email của bạn là ?" />   
+                    <label>Link FB cá nhân</label>
+                    <input type="text" placeholder="Link FB cá nhân !" />   
+                    <label>Số điện thoại</label>
+                    <input type="text" placeholder="Vui lòng nhập số điện thoại của bạn" />   
+                </form>
+                <div class="sm"> <button> Gửi thông tin !</button> </div>
+            </div>
+            <div class="dev">
+                <button onclick="showForm('infoDev')">
+                    <h2>Team Dev</h2>
+                </button>
+            </div>
+            <div id="infoDev" class="informationright">
+                <form>
+                    <label>Họ và tên</label>
+                    <input type="text" placeholder="Tên bạn là ?" />   
+                    <label>Ngày tháng năm sinh</label>
+                    <input type="date" placeholder="Bạn sinh ngày ?" />   
+                    <label>Quê quán</label>
+                    <input type="text" placeholder="Quê bạn ở ?" />   
+                    <label>Khoá học</label>
+                    <input type="text" placeholder="Bạn là khoá bao nhiêu ?" />   
+                    <label>Ngành học hiện tại</label>
+                    <input type="text" placeholder="Bạn đang học ngành gì ?" />   
+                    <label>Email cá nhân</label>
+                    <input type="email" placeholder="Email của bạn là ?" />   
+                    <label>Link FB cá nhân</label>
+                    <input type="text" placeholder="Link FB cá nhân !" />   
+                    <label>Số điện thoại</label>
+                    <input type="text" placeholder="Vui lòng nhập số điện thoại của bạn" />   
+                </form>
+                <div class="sm"> <button> Gửi thông tin !</button> </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

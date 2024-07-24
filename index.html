@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Quản Lý Nhân Sự TYP</title>
+    <link rel="stylesheet" href="./main_v2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="title">
+        <div class="title_text title_1">Tôi yêu PTIT</div>
+        <div class="title_text title_2">Quản lý nhân sự</div>
+    </div>
+    <ul class="navbar">
+        <li class="navbar_element navbar_active">
+            <a href="https://www.facebook.com/BatHuPTIT">FaceBook Tôi Yêu PTIT</a>  
+        </li>
+        <li class="navbar_element">
+            <a href="https://www.tiktok.com/@toiyeuptit?_t=8o6D8sbX4an&_r=1">TikTok Tôi Yêu PTIT</a>
+        </li>
+        <li class="navbar_element">
+            <a href="">Danh sách thành viên Tôi Yêu PTIT</a>
+        </li>
+    </ul>
+    <div class="content">
+        <div class="group_team group_1">
+            <div class="team_element">
+                <div class="team_title title_element_1">
+                    <div class="title_element_content">
+                        <button class="click" onclick="showModal()">Team Page</button>
+                    </div>
+                </div>
+                <div class="team_form"></div>
+            </div>
+            <div class="team_element">
+                <div class="team_title title_element_2">
+                    <div class="title_element_content">
+                        <button class="click" onclick="showModal()">Team Group</button>
+                    </div>
+                </div>
+                <div class="team_form"></div>
+            </div>
+            <div class="team_element">
+                <div class="team_title title_element_3">
+                    <div class="title_element_content">
+                        <button class="click" onclick="showModal()">Team TikTok</button>
+                    </div>
+                </div>
+                <div class="team_form"></div>
+            </div>
+        </div>
+        <div class="group_team group_2">
+            <div class="team_element">
+                <div class="team_title title_element_4">
+                    <div class="title_element_content">
+                        <button class="click" onclick="showModal()">Team Media</button>
+                    </div>
+                </div>
+                <div class="team_form"></div>
+            </div>
+            <div class="team_element">
+                <div class="team_title title_element_5">
+                    <div class="title_element_content">
+                        <button class="click" onclick="showModal()">Team Desgin</button>
+                    </div>
+                </div>
+                <div class="team_form"></div>
+            </div>
+            <div class="team_element">
+                <div class="team_title title_element_6">
+                    <div class="title_element_content">
+                        <button class="click" onclick="showModal()">Team Dev</button>
+                    </div>
+                </div>
+                <div class="team_form"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div>
+                <form>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><label>Họ và tên</label></td>
+                                <td><input class="ip1" name="name" type="text" placeholder="Tên bạn là ?" /></td>
+                            </tr>
+                            <tr>
+                                <td><label>Ngày tháng năm sinh</label></td>
+                                <td><input class="ip2" name="birthdate" type="text" placeholder="Bạn sinh ngày ?" /></td>
+                            </tr>
+                            <tr>
+                                <td><label>Quê quán</label></td>
+                                <td><input class="ip3" name="hometown" type="text" placeholder="Quê bạn ở ?" /></td>
+                            </tr>
+                            <tr>
+                                <td><label>Khoá học</label></td>
+                                <td><input class="ip4" name="course" type="text" placeholder="Bạn là khoá bao nhiêu ?" /></td>
+                            </tr>
+                            <tr>
+                                <td><label>Ngành học hiện tại</label></td>
+                                <td><input class="ip5" name="major" type="text" placeholder="Bạn đang học ngành gì ?" /></td>
+                            </tr>
+                            <tr>
+                                <td><label>Email cá nhân</label></td>
+                                <td><input class="ip6" name="email" type="text" placeholder="Email của bạn là ?" /></td>
+                            </tr>
+                            <tr>
+                                <td><label>Link FB cá nhân</label></td>
+                                <td><input class="ip7" name="fbLink" type="text" placeholder="Link FB cá nhân !" /></td>
+                            </tr>
+                            <tr>
+                                <td><label>Số điện thoại</label></td>
+                                <td><input class="ip8" name="phone" type="text" placeholder="Vui lòng nhập số điện thoại của bạn" /></td>
+                            </tr>
+                        </tbody> 
+                    </table>
+                </form>
+                <div class="sm"> <button> Gửi thông tin !</button> </div>
+            </div>
+        </div>
+    </div>
+    <script src="./main_v2.js"></script>
+    <script src="./server.js"></script>
+    <script src="./router.js"></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+.title {
+    position: relative;
+    width: 100%;
+    height: 60px;
+}
+
+.title_text {
+    position: absolute;
+    display: block;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: "Baloo 2";
+}
+
+.title_1 {
+    color: rgb(224, 20, 20);
+    top: 0px;
+    left: 0px;
+}
+
+.title_2 {
+    color: #333;
+    top: 0px;
+    right: 0px;
+}
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    margin-bottom: 50px;
+}
+
+.navbar_element {
+    float: left;
+}
+
+.navbar_element a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: "Baloo 2";
+}
+
+.navbar_element a:hover {
+    background-color: #111;
+}
+
+.navbar_active {
+    background-color: rgb(224, 20, 20);;
+}
+
+.content{
+    position: relative;
+    width: 100%;
+    height: 360px;
+}
+
+.group_team {
+    position: absolute;
+    padding: 0 50px;
+    width: calc(50% - 100px);
+}
+
+.group_1 {
+    top: 0px;
+    left: 0px;
+}
+
+.group_2 {
+    top: 0px;
+    right: 0px;
+}
+
+.team_element {
+    width: 100%; 
+    height: 130px; 
+    margin-bottom: 60px; 
+    border-radius: 30px;
+}
+
+.team_title{
+    width: 100%;
+    height: 130px;
+    border-radius: 30px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: inherit;
+}
+
+.title_element_1 {
+    background-color: #D37C70;
+}
+
+.title_element_2 {
+    background-color: #f2c67a;
+}
+
+.title_element_3 {
+    background-color: #A8B548;
+}
+
+.title_element_4 {
+    background-color: #8BABC6;
+}
+
+.title_element_5 {
+    background-color: #B79A67;
+}
+
+.title_element_6 {
+    background-color: #f5ad95;
+}
+
+.title_element_content, .click {
+    width: 100%;
+    height: 100%;
+    padding: inherit;
+    border-radius: 30px;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    display: block;
+    color: whitesmoke;
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: "Baloo 2";
+    transition: box-shadow 0.3s ease;
+}
+
+.click:hover {
+    box-shadow: 0 8px 16px rgba(1, 1, 1, 1);
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+background-color: #fefefe;
+margin: 15% auto; /* 15% from the top and centered */
+padding: 20px  ;
+border: 1px solid #888;
+width: 50%; /* Could be more or less, depending on screen size */
+text-align: left;
+font-size: 1rem;
+font-weight: bold;
+font-family: "Baloo 2";
+}
+
+/* The Close Button */
+.close {
+color: #aaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+color: black;
+text-decoration: none;
+cursor: pointer;
+}
+
+.sm {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: "Baloo 2";
+}
+
+body {
+    background-image: url();
+    background-color: rgba(0, 255, 255, 0.466);
+}
