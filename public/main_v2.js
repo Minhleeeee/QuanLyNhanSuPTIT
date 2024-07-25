@@ -37,9 +37,8 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         console.log('Data to be sent:', data);
-        console.log('URL to be fetched: http://127.0.0.1:5500/submit');
 
-        fetch('http://127.0.0.1:5500/submit', {
+        fetch('/submit', { // Đổi URL để khớp với đường dẫn trong server
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -51,21 +50,15 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-            return response.text();
+            return response.json(); // Đổi để phân tích JSON
         })
-        .then(text => {
-            console.log('Response text:', text);
-            try {
-                const responseData = JSON.parse(text);
-                if (responseData.success) {
-                    alert('Thông tin đã được gửi thành công!');
-                    hideModal();
-                } else {
-                    alert('Gửi thông tin thất bại.');
-                }
-            } catch (e) {
-                console.error('Lỗi phân tích JSON:', e);
-                alert('Có lỗi xảy ra.');
+        .then(responseData => {
+            console.log('Response data:', responseData);
+            if (responseData.success) {
+                alert('Thông tin đã được gửi thành công!');
+                hideModal();
+            } else {
+                alert('Gửi thông tin thất bại.');
             }
         })
         .catch(error => {
