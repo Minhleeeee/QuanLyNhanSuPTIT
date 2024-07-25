@@ -2,12 +2,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
-const port = process.env.PORT || 80; // Sửa lại cách định nghĩa biến port
+const port = 5500;
 
-const routes = require('./routes');
+const routes = require('./routes'); // Đảm bảo đường dẫn này là chính xác
 
 app.use(bodyParser.json());
-app.use(cors()); // Cấu hình CORS
+app.use(cors());
 app.use(express.static('public'));
 
 app.use('/', routes);

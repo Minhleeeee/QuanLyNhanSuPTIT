@@ -19,7 +19,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     closeModal.onclick = hideModal;
 
-    submitButton.addEventListener('click', function() {
+    submitButton.addEventListener('click', function(event) {
+        event.preventDefault(); // Ngăn chặn hành động mặc định của nút submit
+
         const form = document.querySelector('form');
         const formData = new FormData(form);
 
@@ -34,7 +36,10 @@ document.addEventListener('DOMContentLoaded', function () {
             phone: formData.get('phone')
         };
 
-        fetch('/submit', {
+        console.log('Data to be sent:', data);
+        console.log('URL to be fetched: http://127.0.0.1:5500/submit');
+
+        fetch('http://127.0.0.1:5500/submit', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -42,17 +47,19 @@ document.addEventListener('DOMContentLoaded', function () {
             body: JSON.stringify(data)
         })
         .then(response => {
+            console.log('Response status:', response.status);
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-            return response.text(); // Đọc dữ liệu dưới dạng văn bản
+            return response.text();
         })
         .then(text => {
+            console.log('Response text:', text);
             try {
-                const data = JSON.parse(text); // Phân tích văn bản thành JSON
-                if (data.success) {
+                const responseData = JSON.parse(text);
+                if (responseData.success) {
                     alert('Thông tin đã được gửi thành công!');
-                    hideModal(); // Ẩn modal sau khi gửi thành công
+                    hideModal();
                 } else {
                     alert('Gửi thông tin thất bại.');
                 }
